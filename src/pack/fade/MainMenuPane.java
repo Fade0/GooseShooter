@@ -1,7 +1,5 @@
 package pack.fade;
 
-import fade.pack.Assets;
-
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.*;

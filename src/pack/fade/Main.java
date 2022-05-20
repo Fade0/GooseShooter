@@ -1,6 +1,5 @@
 package pack.fade;
 
-import fade.pack.Assets;
 import pack.fade.game.GamePane;
 import pack.fade.leaderboard.LeaderboardPane;
 

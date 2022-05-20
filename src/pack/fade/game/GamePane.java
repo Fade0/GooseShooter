@@ -1,7 +1,8 @@
 package pack.fade.game;
 
-import fade.pack.Assets;
+import pack.fade.Assets;
 import pack.fade.Main;
+import pack.fade.game.mode.Mode;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +15,7 @@ public class GamePane extends JPanel {
     private ImageIcon hardButtonImage;
     private ImageIcon returnButtonImage;
     private ImageIcon backgroundImage;
+    private int modeSelected;
 
     public GamePane(){
         //Importing Images
@@ -23,6 +25,7 @@ public class GamePane extends JPanel {
         titleImage = Assets.getTitleImage();
         backgroundImage = Assets.getBackgroundImage();
         returnButtonImage = Assets.getReturnButtonImage();
+        modeSelected = 0;
 
         //Button - Title
         JButton titleButton = new JButton(titleImage);
@@ -97,10 +100,14 @@ public class GamePane extends JPanel {
         easyDiffButton.addActionListener(e ->{
             System.out.println("MainMenu/ModeMenu/easyButton");
             Main.getGameFrame().getCardLayout().show(Main.getGameFrame().getMainPane(),"GAMEPLAY");
+
+
         });
         mediumDiffButton.addActionListener(e ->{
             System.out.println("MainMenu/ModeMenu/mediumButton");
             Main.getGameFrame().getCardLayout().show(Main.getGameFrame().getMainPane(),"GAMEPLAY");
+
+
         });
         hardDiffButton.addActionListener(e ->{
             System.out.println("MainMenu/ModeMenu/hardButton");
@@ -118,5 +125,25 @@ public class GamePane extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(backgroundImage.getImage(), 0, 0, this);
+    }
+
+
+    public void whichModeSelected(int modeSelected){
+        this.modeSelected = modeSelected;
+
+        switch (modeSelected){
+            case 2:
+                System.out.println("Hard Mode");
+
+            case 1:
+                System.out.println("Medium Mode");
+
+            case 0:
+                System.out.println("Easy Mode");
+
+            default:
+                System.out.println("No mode selected");
+        }
+
     }
 }
