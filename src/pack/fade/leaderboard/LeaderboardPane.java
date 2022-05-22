@@ -1,6 +1,6 @@
 package pack.fade.leaderboard;
 
-import fade.pack.Assets;
+import pack.fade.Assets;
 import pack.fade.Main;
 
 import javax.swing.*;

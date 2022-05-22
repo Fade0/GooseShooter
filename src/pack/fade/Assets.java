@@ -1,4 +1,4 @@
-package fade.pack;
+package pack.fade;
 
 import javax.swing.*;
 import java.util.MissingResourceException;
