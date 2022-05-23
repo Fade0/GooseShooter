@@ -1,6 +1,7 @@
 package pack.fade;
 
 import pack.fade.game.GamePane;
+import pack.fade.game.GameplayPane;
 import pack.fade.leaderboard.LeaderboardPane;
 
 import javax.swing.*;
@@ -33,6 +34,7 @@ public class Main {
         private JPanel gamePane;
         private JPanel modePane;
         private JPanel leaderboardPane;
+        private JPanel gameplayPane;
 
 
         public GameFrame(){
@@ -43,7 +45,7 @@ public class Main {
             mainPane.add(mainMenuPane = new MainMenuPane(),"MAIN_MENU");
             mainPane.add(modePane = new GamePane(),"MODE_MENU");
             mainPane.add(leaderboardPane = new LeaderboardPane(),"LEADERBOARD");
-            //mainPane.add(GameplayPane = new GameplayPane(),"GAMEPLAY");
+            mainPane.add(gameplayPane = new GameplayPane(),"GAMEPLAY");
 
             add(mainPane);
 

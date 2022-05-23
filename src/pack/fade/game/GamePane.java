@@ -2,7 +2,6 @@ package pack.fade.game;
 
 import pack.fade.Assets;
 import pack.fade.Main;
-import pack.fade.game.mode.Mode;
 
 import javax.swing.*;
 import java.awt.*;
@@ -146,4 +145,6 @@ public class GamePane extends JPanel {
         }
 
     }
+
+
 }
