@@ -4,6 +4,8 @@ import pack.fade.MainMenuPane;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GameplayPane extends JPanel {
     private CardLayout cardLayout;
@@ -41,6 +43,7 @@ public class GameplayPane extends JPanel {
     JButton timeButton = new JButton(testIcon1);
     timeButton.setBorder(BorderFactory.createEmptyBorder());
     timeButton.setContentAreaFilled(false);
+    timeButton.setText("time!");
     timeButton.setHorizontalTextPosition(JButton.CENTER);
     timeButton.setVerticalTextPosition(JButton.CENTER);
 
@@ -48,6 +51,7 @@ public class GameplayPane extends JPanel {
     JButton liveButton = new JButton(testIcon2);
     liveButton.setBorder(BorderFactory.createEmptyBorder());
     liveButton.setContentAreaFilled(false);
+    liveButton.setText("live!");
     liveButton.setHorizontalTextPosition(JButton.CENTER);
     liveButton.setVerticalTextPosition(JButton.CENTER);
 
@@ -55,6 +59,7 @@ public class GameplayPane extends JPanel {
     JButton scoreButton = new JButton(testIcon3);
     scoreButton.setBorder(BorderFactory.createEmptyBorder());
     scoreButton.setContentAreaFilled(false);
+    scoreButton.setText("score!");
     scoreButton.setHorizontalTextPosition(JButton.CENTER);
     scoreButton.setVerticalTextPosition(JButton.CENTER);
 
@@ -62,6 +67,7 @@ public class GameplayPane extends JPanel {
     JButton ammoButton = new JButton(testIcon1);
     ammoButton.setBorder(BorderFactory.createEmptyBorder());
     ammoButton.setContentAreaFilled(false);
+    ammoButton.setText("amom!");
     ammoButton.setHorizontalTextPosition(JButton.CENTER);
     ammoButton.setVerticalTextPosition(JButton.CENTER);
 
@@ -80,15 +86,29 @@ public class GameplayPane extends JPanel {
     upgradeButton.setText("Upgrade!");
     upgradeButton.setHorizontalTextPosition(JButton.CENTER);
     upgradeButton.setVerticalTextPosition(JButton.CENTER);
+        //upgradeButton
+        JButton testbutton2 = new JButton(testIcon3);
+        testbutton2.setBorder(BorderFactory.createEmptyBorder());
+        testbutton2.setContentAreaFilled(false);
+        testbutton2.setText("testbutton2");
+        testbutton2.setHorizontalTextPosition(JButton.CENTER);
+        testbutton2.setVerticalTextPosition(JButton.CENTER);
 
         //bg3Button
         JButton bg3Button = new JButton(bg3);
         bg3Button.setBorder(BorderFactory.createEmptyBorder());
         bg3Button.setContentAreaFilled(false);
-        bg3Button.setText("Upgrade!");
+        bg3Button.setText("bg");
         bg3Button.setHorizontalTextPosition(JButton.CENTER);
         bg3Button.setVerticalTextPosition(JButton.CENTER);
 
+        JPanel gameplayPane = new JPanel();
+        gameplayPane.setPreferredSize(new Dimension(800,420));
+        gameplayPane.setMinimumSize(new Dimension(800,420));
+        gameplayPane.setOpaque(false);
+        /*JLabel jLabel = new JLabel(bg3);
+        gameplayPane.add(jLabel);
+*/
         //LayoutMain
         setLayout(new GridBagLayout());
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
@@ -109,19 +129,30 @@ public class GameplayPane extends JPanel {
         //LeaderboardButton
         add(scoreButton, gridBagConstraints);
         gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
+
         //CreditsButton
         add(liveButton, gridBagConstraints);
 
-        gridBagConstraints.gridx = 6;
 
 
         //bg3
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.gridx = 0;
-        add(bg3Button,gridBagConstraints);
-
+        gridBagConstraints.gridwidth = 4;
+        add(gameplayPane,gridBagConstraints);
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 1;
+        //TitleButton
+        add(reloardButton, gridBagConstraints);
+        gridBagConstraints.gridx = 1;
+        //StartButton
+        add(ammoButton, gridBagConstraints);
         gridBagConstraints.gridx = 2;
+        //LeaderboardButton
+        add(upgradeButton, gridBagConstraints);
+        gridBagConstraints.gridx = 3;
+        //CreditsButton
+        add(testbutton2, gridBagConstraints);
 //        //InnerPane
 //        JPanel innerPane = new JPanel();
 //        innerPane.setOpaque(false);
