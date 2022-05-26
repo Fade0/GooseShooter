@@ -38,7 +38,7 @@ public class Assets{
             mediumButtonImage = new ImageIcon("resources/img/mediumButton.png");
             hardButtonImage = new ImageIcon("resources/img/hardButton.png");
             returnButtonImage = new ImageIcon("resources/img/returnButton.png");
-            creditsButtonImage = new ImageIcon("resources/img/returnButton.png");
+            creditsButtonImage = new ImageIcon("resources/img/creditButton.png");
         }
 
         catch (MissingResourceException exception){
