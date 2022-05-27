@@ -2,17 +2,20 @@ package pack.fade;
 
 import pack.fade.game.GamePane;
 import pack.fade.game.GameplayPane;
+import pack.fade.game.Settings;
 import pack.fade.leaderboard.LeaderboardPane;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Set;
 
 public class Main {
 
     private static GameFrame gameFrame;
+    private static Settings settings;
 
     public static void main(String[] args) {
-
+        settings = new Settings();
         new Assets();
 
 
@@ -25,6 +28,9 @@ public class Main {
         return gameFrame;
     }
 
+    public static Settings getSettings() {
+        return settings;
+    }
     /*public static class GameFrame extends JFrame {
 
         private CardLayout cardLayout;

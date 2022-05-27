@@ -1,13 +1,17 @@
 package pack.fade.game;
 
+import pack.fade.Main;
 import pack.fade.MainMenuPane;
 import pack.fade.object.Duck;
 import pack.fade.object.EasyDuck;
+import pack.fade.object.HardDuck;
+import pack.fade.object.MediumDuck;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class GameplayPane extends JPanel {
     private CardLayout cardLayout;
@@ -167,12 +171,29 @@ public class GameplayPane extends JPanel {
         reloadButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Duck duck = new EasyDuck();
-                shootingPane.add(duck);
+                spawnRate = Main.getSettings().getModeSelected();
+
+                Random random = new Random();
+                int rand = (random.nextInt(100))*spawnRate;
+                System.out.println(rand);
+                if(rand <= 10){
+                    Duck duck = new HardDuck();
+                    shootingPane.add(duck);
+                }
+                else if(rand <= 50){
+                    Duck duck = new MediumDuck();
+                    shootingPane.add(duck);
+                }
+                else if(rand <= 100){
+                    Duck duck = new EasyDuck();
+                    shootingPane.add(duck);
+                }
+
             }
         });
 
     }
+
     void setGameSettings(){
         switch (gameModeSelected){
             //Hard
@@ -180,7 +201,7 @@ public class GameplayPane extends JPanel {
             {
                 lives = 1;
                 ammo = 5;
-                spawnRate = 10;
+                spawnRate = 3;
                 speed = 3;
                 magazineLevel = 1;
             }
@@ -189,7 +210,7 @@ public class GameplayPane extends JPanel {
             {
                 lives = 3;
                 ammo = 7;
-                spawnRate = 8;
+                spawnRate = 2;
                 speed = 2;
                 magazineLevel = 1;
             }
@@ -198,7 +219,7 @@ public class GameplayPane extends JPanel {
             {
                 lives = 5;
                 ammo = 9;
-                spawnRate = 5;
+                spawnRate = 1;
                 speed = 1;
                 magazineLevel = 1;
             }
@@ -225,4 +246,5 @@ public class GameplayPane extends JPanel {
     public void setShootingPane(JPanel shootingPane) {
         this.shootingPane = shootingPane;
     }
+
 }

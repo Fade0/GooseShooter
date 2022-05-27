@@ -22,7 +22,7 @@ public class MovingObject extends JButton {
         this.lives = lives;
         this.alive = true;
         this.direction = direction;
-        this.imageIcon = Assets.getGooseGifImage();
+        this.imageIcon = imageIcon;
         this.speed = speed;
         setBounds(800, new Random().nextInt(420), 50, 50);
         objectThread = new Thread(()->{
@@ -43,7 +43,7 @@ public class MovingObject extends JButton {
 
         objectThread.start();
         Main.getGameFrame().getMainMenuPane().soundClick();
-        setText(":D");
+
     }
 
     public void moveObject(){

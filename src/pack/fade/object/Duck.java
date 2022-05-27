@@ -11,6 +11,7 @@ public abstract class Duck extends MovingObject {
         super(lives, direction, imageIcon, speed);
         this.score = score;
         this.damage = damage;
+        imageIcon = new ImageIcon("resources/img/goose.gif");
         System.out.println("IM ALIVE!");
     }
 

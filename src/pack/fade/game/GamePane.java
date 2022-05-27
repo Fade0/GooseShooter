@@ -36,15 +36,19 @@ public class GamePane extends JPanel {
         easyDiffButton.setBorder(BorderFactory.createEmptyBorder());
         easyDiffButton.setContentAreaFilled(false);
 
+
+
         //Button - Medium
         JButton mediumDiffButton = new JButton(mediumButtonImage);
         mediumDiffButton.setBorder(BorderFactory.createEmptyBorder());
         mediumDiffButton.setContentAreaFilled(false);
 
-        //Button - Medium
+
+        //Button - Hard
         JButton hardDiffButton = new JButton(hardButtonImage);
         hardDiffButton.setBorder(BorderFactory.createEmptyBorder());
         hardDiffButton.setContentAreaFilled(false);
+
 
         //Button - Return
         JButton returnButton = new JButton(returnButtonImage);
@@ -99,18 +103,20 @@ public class GamePane extends JPanel {
         easyDiffButton.addActionListener(e ->{
             System.out.println("MainMenu/ModeMenu/easyButton");
             Main.getGameFrame().getCardLayout().show(Main.getGameFrame().getMainPane(),"GAMEPLAY");
+            modeSelected = 0;
 
 
         });
         mediumDiffButton.addActionListener(e ->{
             System.out.println("MainMenu/ModeMenu/mediumButton");
             Main.getGameFrame().getCardLayout().show(Main.getGameFrame().getMainPane(),"GAMEPLAY");
-
+            modeSelected =1;
 
         });
         hardDiffButton.addActionListener(e ->{
             System.out.println("MainMenu/ModeMenu/hardButton");
             Main.getGameFrame().getCardLayout().show(Main.getGameFrame().getMainPane(),"GAMEPLAY");
+            modeSelected = 2;
         });
         returnButton.addActionListener(e ->{
             System.out.println("MainMenu/returnButton");
@@ -127,7 +133,7 @@ public class GamePane extends JPanel {
     }
 
 
-    public void whichModeSelected(int modeSelected){
+    public void getModeSelected(int modeSelected){
         this.modeSelected = modeSelected;
 
         switch (modeSelected){
