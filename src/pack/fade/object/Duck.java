@@ -1,49 +1,19 @@
 package pack.fade.object;
 
-public abstract class Duck {
-    private int lives;
+import pack.fade.MovingObject;
+
+import javax.swing.*;
+
+public abstract class Duck extends MovingObject {
     private final int score;
     private final int damage;
-    private boolean alive;
 
-    protected Duck(int lives, int score, int damage, boolean alive) {
-        this.lives = lives;
+
+    public Duck(int lives, boolean direction, ImageIcon imageIcon, int score, int damage, int speed) {
+        super(lives, direction, imageIcon, speed);
         this.score = score;
         this.damage = damage;
-        this.alive = true;
+        System.out.println("IM ALIVE!");
     }
 
-    public void setLives(int lives) {
-        this.lives = lives;
-    }
-
-    public void setAlive(boolean alive) {
-        this.alive = alive;
-    }
-
-    public int getLives() {
-        return lives;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
-
-    public boolean isAlive() {
-        return alive;
-    }
-
-    @Override
-    public String toString() {
-        return "Duck{" +
-                "lives=" + lives +
-                ", score=" + score +
-                ", damage=" + damage +
-                ", alive=" + alive +
-                '}';
-    }
 }

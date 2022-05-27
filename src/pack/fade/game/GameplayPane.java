@@ -1,6 +1,8 @@
 package pack.fade.game;
 
 import pack.fade.MainMenuPane;
+import pack.fade.object.Duck;
+import pack.fade.object.EasyDuck;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,6 +27,13 @@ public class GameplayPane extends JPanel {
     private ImageIcon testIcon3;
     private ImageIcon backgroundImage;
     private ImageIcon bg3;
+
+    private JPanel shootingPane;
+    /*
+    WYjebac wszystkie zmienne typu button przed konstruktor
+    np
+    Jbutton reloadBUtton;
+     */
 
     public GameplayPane(){
     titleImage = new ImageIcon("resources/img/returnButton.png");
@@ -72,12 +81,14 @@ public class GameplayPane extends JPanel {
     ammoButton.setVerticalTextPosition(JButton.CENTER);
 
     //reloardButton
-    JButton reloardButton = new JButton(testIcon2);
-    reloardButton.setBorder(BorderFactory.createEmptyBorder());
-    reloardButton.setContentAreaFilled(false);
-    reloardButton.setText("Reload!");
-    reloardButton.setHorizontalTextPosition(JButton.CENTER);
-    reloardButton.setVerticalTextPosition(JButton.CENTER);
+    JButton reloadButton = new JButton(testIcon2);
+    reloadButton.setBorder(BorderFactory.createEmptyBorder());
+    reloadButton.setContentAreaFilled(false);
+    reloadButton.setText("Reload!");
+    reloadButton.setHorizontalTextPosition(JButton.CENTER);
+    reloadButton.setVerticalTextPosition(JButton.CENTER);
+
+
 
     //upgradeButton
     JButton upgradeButton = new JButton(testIcon3);
@@ -102,13 +113,11 @@ public class GameplayPane extends JPanel {
         bg3Button.setHorizontalTextPosition(JButton.CENTER);
         bg3Button.setVerticalTextPosition(JButton.CENTER);
 
-        JPanel gameplayPane = new JPanel();
-        gameplayPane.setPreferredSize(new Dimension(800,420));
-        gameplayPane.setMinimumSize(new Dimension(800,420));
-        gameplayPane.setOpaque(false);
-        /*JLabel jLabel = new JLabel(bg3);
-        gameplayPane.add(jLabel);
-*/
+        shootingPane = new JPanel();
+        shootingPane.setPreferredSize(new Dimension(800,420));
+        shootingPane.setMinimumSize(new Dimension(800,420));
+        shootingPane.setOpaque(false);
+
         //LayoutMain
         setLayout(new GridBagLayout());
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
@@ -139,11 +148,11 @@ public class GameplayPane extends JPanel {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridwidth = 4;
-        add(gameplayPane,gridBagConstraints);
+        add(shootingPane,gridBagConstraints);
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 1;
         //TitleButton
-        add(reloardButton, gridBagConstraints);
+        add(reloadButton, gridBagConstraints);
         gridBagConstraints.gridx = 1;
         //StartButton
         add(ammoButton, gridBagConstraints);
@@ -153,31 +162,15 @@ public class GameplayPane extends JPanel {
         gridBagConstraints.gridx = 3;
         //CreditsButton
         add(testbutton2, gridBagConstraints);
-//        //InnerPane
-//        JPanel innerPane = new JPanel();
-//        innerPane.setOpaque(false);
-//
-//        add(innerPane, gridBagConstraints);
-//        innerPane.setLayout(new GridBagLayout());
-//        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-//        gridBagConstraints.anchor = GridBagConstraints.CENTER;
-//        gridBagConstraints.gridx = 0;
-//        gridBagConstraints.gridy = 0;
-//        gridBagConstraints.ipadx = 0;
-//        gridBagConstraints.ipady = 0;
-//
-//        //StartButton in InnerPane
-//        innerPane.add(ammoButton, gridBagConstraints);
-//        gridBagConstraints.gridx = 1;
-//        //LeaderboardButton in InnerPane
-//        innerPane.add(reloardButton, gridBagConstraints);
-//        gridBagConstraints.gridx = 2;
-//        //CreditsButton in InnerPane
-//        innerPane.add(upgradeButton, gridBagConstraints);
-//        gridBagConstraints.gridx = 3;
 
 
-
+        reloadButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Duck duck = new EasyDuck();
+                shootingPane.add(duck);
+            }
+        });
 
     }
     void setGameSettings(){
@@ -204,7 +197,7 @@ public class GameplayPane extends JPanel {
             default:
             {
                 lives = 5;
-                ammo = 50;
+                ammo = 9;
                 spawnRate = 5;
                 speed = 1;
                 magazineLevel = 1;
@@ -223,5 +216,13 @@ public class GameplayPane extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(backgroundImage.getImage(), 0, 0, this);
+    }
+
+    public JPanel getShootingPane() {
+        return shootingPane;
+    }
+
+    public void setShootingPane(JPanel shootingPane) {
+        this.shootingPane = shootingPane;
     }
 }

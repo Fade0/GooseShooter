@@ -1,26 +1,30 @@
 package pack.fade;
 
 import pack.fade.game.GamePane;
+import pack.fade.game.GameplayPane;
+import pack.fade.leaderboard.LeaderboardPane;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class GameFrame extends JFrame {
 
-    private CardLayout customizedCardLayout;
+    private CardLayout cardLayout;
     private MainMenuPane mainMenuPane;
     private JPanel mainPane;
-    private JPanel gamePane;
-    private JPanel modePane;
-    private JPanel leaderboardPane;
+    private GamePane modePane;
+    private LeaderboardPane leaderboardPane;
+    private GameplayPane gameplayPane;
 
     public GameFrame(){
         mainMenuPane = new MainMenuPane();
 
         mainPane = new JPanel();
-        mainPane.setLayout(customizedCardLayout = new CardLayout());
+        mainPane.setLayout(cardLayout = new CardLayout());
         mainPane.add(mainMenuPane = new MainMenuPane(),"MAIN_MENU");
-        mainPane.add(gamePane = new GamePane(),"MODE_MENU");
+        mainPane.add(modePane = new GamePane(),"MODE_MENU");
+        mainPane.add(leaderboardPane = new LeaderboardPane(),"LEADERBOARD");
+        mainPane.add(gameplayPane = new GameplayPane(),"GAMEPLAY");
         //mainPane.add(modePane = new ModePane(),"MODE_MENU");
         add(mainPane);
 
@@ -37,8 +41,8 @@ public class GameFrame extends JFrame {
         setLocationRelativeTo(null);
     }
 
-    public CardLayout getCustomizedCardLayout() {
-        return customizedCardLayout;
+    public CardLayout getCardLayout() {
+        return cardLayout;
     }
 
     public MainMenuPane getMainMenuPane() {
@@ -47,5 +51,17 @@ public class GameFrame extends JFrame {
 
     public JPanel getMainPane() {
         return mainPane;
+    }
+
+    public GamePane getModePane() {
+        return modePane;
+    }
+
+    public LeaderboardPane getLeaderboardPane() {
+        return leaderboardPane;
+    }
+
+    public GameplayPane getGameplayPane() {
+        return gameplayPane;
     }
 }

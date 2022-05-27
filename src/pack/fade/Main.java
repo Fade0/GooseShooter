@@ -21,12 +21,11 @@ public class Main {
         });
     }
 
-    public static pack.fade.Main.GameFrame getGameFrame(){
+    public static GameFrame getGameFrame() {
         return gameFrame;
     }
 
-
-    public static class GameFrame extends JFrame {
+    /*public static class GameFrame extends JFrame {
 
         private CardLayout cardLayout;
         private MainMenuPane mainMenuPane;
@@ -70,6 +69,5 @@ public class Main {
 
         public JPanel getMainPane() {
             return mainPane;
-        }
-    }
+        }*/
 }
