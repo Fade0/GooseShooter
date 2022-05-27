@@ -1,4 +1,7 @@
-package pack.fade;
+package pack.fade.object;
+
+import pack.fade.Assets;
+import pack.fade.Main;
 
 import javax.swing.*;
 

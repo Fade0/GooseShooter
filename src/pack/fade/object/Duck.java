@@ -1,7 +1,5 @@
 package pack.fade.object;
 
-import pack.fade.MovingObject;
-
 import javax.swing.*;
 
 public abstract class Duck extends MovingObject {
