@@ -14,6 +14,7 @@ public class Assets{
     private static ImageIcon returnButtonImage;
     private static ImageIcon exitButton;
     private static ImageIcon gooseGifImage;
+    private static ImageIcon gooseGifImage2;
     private static ImageIcon backgroundImage;
     private static ImageIcon creditsButtonImage;
 
@@ -29,6 +30,7 @@ public class Assets{
             exitButton = new ImageIcon("resources/img/exitButton.png");
             titleImage = new ImageIcon("resources/img/titleButton.png");
             gooseGifImage = new ImageIcon("resources/img/goose.gif");
+            gooseGifImage2 = new ImageIcon("resources/img/goose.png");
             //backgroundImage = new ImageIcon("resources/img/background.png");
             //backgroundImage = new ImageIcon("resources/img/background.gif");
             backgroundImage = new ImageIcon("resources/img/bg2.png");
@@ -45,6 +47,14 @@ public class Assets{
             System.out.println("Failed to load graphics");
         }
 
+    }
+
+    public static ImageIcon getGooseGifImage2() {
+        return gooseGifImage2;
+    }
+
+    public static void setGooseGifImage2(ImageIcon gooseGifImage2) {
+        Assets.gooseGifImage2 = gooseGifImage2;
     }
 
     public static ImageIcon getReturnButtonImage() {

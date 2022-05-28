@@ -26,9 +26,13 @@ public class GameplayPane extends JPanel {
     private int score;
 
     private ImageIcon titleImage;
-    private ImageIcon testIcon1;
-    private ImageIcon testIcon2;
-    private ImageIcon testIcon3;
+    private ImageIcon timeButtonImage;
+    private ImageIcon scoreButtonImage;
+    private ImageIcon livesButtonImage;
+    private ImageIcon reloadButtonImage;
+    private ImageIcon ammoButtonImage;
+    private ImageIcon upgradeButtonImage;
+    private ImageIcon levelButtonImage;
     private ImageIcon backgroundImage;
     private ImageIcon bg3;
 
@@ -40,69 +44,72 @@ public class GameplayPane extends JPanel {
      */
 
     public GameplayPane(){
-    titleImage = new ImageIcon("resources/img/returnButton.png");
-    testIcon1 = new ImageIcon("resources/img/testButton1.png");
-    testIcon2 = new ImageIcon("resources/img/testButton2.png");
-    testIcon3 = new ImageIcon("resources/img/testButton3.png");
-    backgroundImage = new ImageIcon("resources/img/background.gif");
-    bg3 = new ImageIcon("resources/img/bg3.png");
+        titleImage = new ImageIcon("resources/img/GameButtonTop1.png");
+        timeButtonImage = new ImageIcon("resources/img/GameButtonTop2.png");
+        scoreButtonImage = new ImageIcon("resources/img/GameButtonTop4.png");
+        livesButtonImage = new ImageIcon("resources/img/GameButtonTop3.png");
+        reloadButtonImage = new ImageIcon("resources/img/GameButtonBottom1.png");
+        ammoButtonImage = new ImageIcon("resources/img/GameButtonBottom2.png");
+        upgradeButtonImage = new ImageIcon("resources/img/GameButtonBottom3.png");
+        levelButtonImage = new ImageIcon("resources/img/GameButtonBottom4.png");
+        backgroundImage = new ImageIcon("resources/img/background.gif");
+        bg3 = new ImageIcon("resources/img/bg3.png");
 
-    //Button - Title
-    JButton titleButton = new JButton(titleImage);
-    titleButton.setBorder(BorderFactory.createEmptyBorder());
-    titleButton.setContentAreaFilled(false);
+        //Button - Title
+        JButton titleButton = new JButton(titleImage);
+        titleButton.setBorder(BorderFactory.createEmptyBorder());
+        titleButton.setContentAreaFilled(false);
 
-    //timeButton
-    JButton timeButton = new JButton(testIcon1);
-    timeButton.setBorder(BorderFactory.createEmptyBorder());
-    timeButton.setContentAreaFilled(false);
-    timeButton.setText("time!");
-    timeButton.setHorizontalTextPosition(JButton.CENTER);
-    timeButton.setVerticalTextPosition(JButton.CENTER);
+        //timeButton
+        JButton timeButton = new JButton(timeButtonImage);
+        timeButton.setBorder(BorderFactory.createEmptyBorder());
+        timeButton.setContentAreaFilled(false);
+        timeButton.setText("time!");
+        timeButton.setHorizontalTextPosition(JButton.CENTER);
+        timeButton.setVerticalTextPosition(JButton.CENTER);
 
-    //liveButton
-    JButton liveButton = new JButton(testIcon2);
-    liveButton.setBorder(BorderFactory.createEmptyBorder());
-    liveButton.setContentAreaFilled(false);
-    liveButton.setText("live!");
-    liveButton.setHorizontalTextPosition(JButton.CENTER);
-    liveButton.setVerticalTextPosition(JButton.CENTER);
+        //liveButton
+        JButton liveButton = new JButton(livesButtonImage);
+        liveButton.setBorder(BorderFactory.createEmptyBorder());
+        liveButton.setContentAreaFilled(false);
+        liveButton.setText("live!");
+        liveButton.setHorizontalTextPosition(JButton.CENTER);
+        liveButton.setVerticalTextPosition(JButton.CENTER);
 
-    //scoreButton
-    JButton scoreButton = new JButton(testIcon3);
-    scoreButton.setBorder(BorderFactory.createEmptyBorder());
-    scoreButton.setContentAreaFilled(false);
-    scoreButton.setText("score!");
-    scoreButton.setHorizontalTextPosition(JButton.CENTER);
-    scoreButton.setVerticalTextPosition(JButton.CENTER);
+        //scoreButton
+        JButton scoreButton = new JButton(scoreButtonImage);
+        scoreButton.setBorder(BorderFactory.createEmptyBorder());
+        scoreButton.setContentAreaFilled(false);
+        scoreButton.setText("score!");
+        scoreButton.setHorizontalTextPosition(JButton.CENTER);
+        scoreButton.setVerticalTextPosition(JButton.CENTER);
 
-    //ammoButton
-    JButton ammoButton = new JButton(testIcon1);
-    ammoButton.setBorder(BorderFactory.createEmptyBorder());
-    ammoButton.setContentAreaFilled(false);
-    ammoButton.setText("amom!");
-    ammoButton.setHorizontalTextPosition(JButton.CENTER);
-    ammoButton.setVerticalTextPosition(JButton.CENTER);
+        //ammoButton
+        JButton ammoButton = new JButton(ammoButtonImage);
+        ammoButton.setBorder(BorderFactory.createEmptyBorder());
+        ammoButton.setContentAreaFilled(false);
+        ammoButton.setText("ammo!");
+        ammoButton.setHorizontalTextPosition(JButton.CENTER);
+        ammoButton.setVerticalTextPosition(JButton.CENTER);
 
-    //reloardButton
-    JButton reloadButton = new JButton(testIcon2);
-    reloadButton.setBorder(BorderFactory.createEmptyBorder());
-    reloadButton.setContentAreaFilled(false);
-    reloadButton.setText("Reload!");
-    reloadButton.setHorizontalTextPosition(JButton.CENTER);
-    reloadButton.setVerticalTextPosition(JButton.CENTER);
+        //reloardButton
+        JButton reloadButton = new JButton(reloadButtonImage);
+        reloadButton.setBorder(BorderFactory.createEmptyBorder());
+        reloadButton.setContentAreaFilled(false);
+        reloadButton.setText("Reload!");
+        reloadButton.setHorizontalTextPosition(JButton.CENTER);
+        reloadButton.setVerticalTextPosition(JButton.CENTER);
 
-
-
-    //upgradeButton
-    JButton upgradeButton = new JButton(testIcon3);
-    upgradeButton.setBorder(BorderFactory.createEmptyBorder());
-    upgradeButton.setContentAreaFilled(false);
-    upgradeButton.setText("Upgrade!");
-    upgradeButton.setHorizontalTextPosition(JButton.CENTER);
-    upgradeButton.setVerticalTextPosition(JButton.CENTER);
         //upgradeButton
-        JButton testbutton2 = new JButton(testIcon3);
+        JButton upgradeButton = new JButton(upgradeButtonImage);
+        upgradeButton.setBorder(BorderFactory.createEmptyBorder());
+        upgradeButton.setContentAreaFilled(false);
+        upgradeButton.setText("Upgrade!");
+        upgradeButton.setHorizontalTextPosition(JButton.CENTER);
+        upgradeButton.setVerticalTextPosition(JButton.CENTER);
+
+        //levelButton
+        JButton testbutton2 = new JButton(levelButtonImage);
         testbutton2.setBorder(BorderFactory.createEmptyBorder());
         testbutton2.setContentAreaFilled(false);
         testbutton2.setText("testbutton2");
@@ -140,13 +147,10 @@ public class GameplayPane extends JPanel {
         add(timeButton, gridBagConstraints);
         gridBagConstraints.gridx = 2;
         //LeaderboardButton
-        add(scoreButton, gridBagConstraints);
-        gridBagConstraints.gridx = 3;
-
-        //CreditsButton
         add(liveButton, gridBagConstraints);
-
-
+        gridBagConstraints.gridx = 3;
+        //CreditsButton
+        add(scoreButton, gridBagConstraints);
 
         //bg3
         gridBagConstraints.gridy = 1;
@@ -166,6 +170,7 @@ public class GameplayPane extends JPanel {
         gridBagConstraints.gridx = 3;
         //CreditsButton
         add(testbutton2, gridBagConstraints);
+
 
 
         reloadButton.addActionListener(new ActionListener() {

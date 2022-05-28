@@ -103,20 +103,23 @@ public class GamePane extends JPanel {
         easyDiffButton.addActionListener(e ->{
             System.out.println("MainMenu/ModeMenu/easyButton");
             Main.getGameFrame().getCardLayout().show(Main.getGameFrame().getMainPane(),"GAMEPLAY");
-            modeSelected = 0;
+            setModeSelected(0);
+            getModeSelected(0);
 
 
         });
         mediumDiffButton.addActionListener(e ->{
             System.out.println("MainMenu/ModeMenu/mediumButton");
             Main.getGameFrame().getCardLayout().show(Main.getGameFrame().getMainPane(),"GAMEPLAY");
-            modeSelected =1;
+            setModeSelected(1);
+            getModeSelected(1);
 
         });
         hardDiffButton.addActionListener(e ->{
             System.out.println("MainMenu/ModeMenu/hardButton");
             Main.getGameFrame().getCardLayout().show(Main.getGameFrame().getMainPane(),"GAMEPLAY");
-            modeSelected = 2;
+            setModeSelected(2);
+            getModeSelected(2);
         });
         returnButton.addActionListener(e ->{
             System.out.println("MainMenu/returnButton");
@@ -133,21 +136,30 @@ public class GamePane extends JPanel {
     }
 
 
+    public void setModeSelected(int modeSelected) {
+        this.modeSelected = modeSelected;
+    }
+
     public void getModeSelected(int modeSelected){
         this.modeSelected = modeSelected;
 
+        /*
         switch (modeSelected){
             case 2:
                 System.out.println("Hard Mode");
-
+                break;
             case 1:
                 System.out.println("Medium Mode");
-
+                break;
             case 0:
                 System.out.println("Easy Mode");
-
-            default:
-                System.out.println("No mode selected");
+                break;
+        }
+        */
+        switch (modeSelected){
+            case 2 -> {
+                    setModeSelected(2);
+            }
         }
 
     }

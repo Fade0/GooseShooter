@@ -7,12 +7,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class LeaderboardPane extends JPanel{
+    private JList<Player> playerJlist;
     private ImageIcon titleImage;
     private ImageIcon returnButtonImage;
     private ImageIcon backgroundImage;
 
     public LeaderboardPane(){
         //Importing Images
+
         titleImage = Assets.getTitleImage();
         backgroundImage = Assets.getBackgroundImage();
         returnButtonImage = Assets.getReturnButtonImage();

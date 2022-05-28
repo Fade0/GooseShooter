@@ -6,7 +6,8 @@ import javax.swing.*;
 
 public class EasyDuck extends Duck{
     public EasyDuck() {
-        super(1, false, Assets.getGooseGifImage(), 100,1,1);
+        super(1, false, Assets.getGooseGifImage2(), 100,1,1);
+        //setImageIcon();
         setText("E");
     }
 }

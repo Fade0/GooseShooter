@@ -1,6 +1,7 @@
 package pack.fade.object;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 
 public abstract class Duck extends MovingObject {
     private final int score;
@@ -11,8 +12,25 @@ public abstract class Duck extends MovingObject {
         super(lives, direction, imageIcon, speed);
         this.score = score;
         this.damage = damage;
-        imageIcon = new ImageIcon("resources/img/goose.gif");
+        imageIcon = new ImageIcon("resources/img/goose.png");
         System.out.println("IM ALIVE!");
+
+        addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                isNotDead();
+            }
+        });
+    }
+    public void isNotDead(){
+        if(getLives() >= 0){
+            System.out.println("oof");
+            setLives(getLives()-1);
+        }
+        else{
+            getObjectThread().interrupt();
+        }
+
     }
 
 }
