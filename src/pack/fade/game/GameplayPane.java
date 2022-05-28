@@ -177,9 +177,9 @@ public class GameplayPane extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 spawnRate = Main.getSettings().getModeSelected();
-
+                System.out.println(spawnRate);
                 Random random = new Random();
-                int rand = (random.nextInt(100))*spawnRate;
+                int rand = (random.nextInt(100));
                 System.out.println(rand);
                 if(rand <= 10){
                     Duck duck = new HardDuck();

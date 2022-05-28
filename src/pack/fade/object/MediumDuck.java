@@ -4,7 +4,6 @@ import pack.fade.Assets;
 
 public class MediumDuck extends Duck{
     public MediumDuck(){
-        super(2, false, Assets.getGooseGifImage(), 150,2,3);
-        setText("M");
+        super(2, false, Assets.getMediumGooseImage(), 150,2,3);
     }
 }

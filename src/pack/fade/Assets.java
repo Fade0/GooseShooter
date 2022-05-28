@@ -15,6 +15,9 @@ public class Assets{
     private static ImageIcon exitButton;
     private static ImageIcon gooseGifImage;
     private static ImageIcon gooseGifImage2;
+    private static ImageIcon easyGooseImage;
+    private static ImageIcon mediumGooseImage;
+    private static ImageIcon hardGooseImage;
     private static ImageIcon backgroundImage;
     private static ImageIcon creditsButtonImage;
 
@@ -31,10 +34,13 @@ public class Assets{
             titleImage = new ImageIcon("resources/img/titleButton.png");
             gooseGifImage = new ImageIcon("resources/img/goose.gif");
             gooseGifImage2 = new ImageIcon("resources/img/goose.png");
-            //backgroundImage = new ImageIcon("resources/img/background.png");
-            //backgroundImage = new ImageIcon("resources/img/background.gif");
+            easyGooseImage = new ImageIcon("resources/img/goose.png");
+            mediumGooseImage = new ImageIcon("resources/img/mediumGoose.png");
+            hardGooseImage = new ImageIcon("resources/img/hardGoose.png");
             backgroundImage = new ImageIcon("resources/img/bg2.png");
             //https://giventofly.github.io/pixelit/#examples
+            //backgroundImage = new ImageIcon("resources/img/background.png");
+            //backgroundImage = new ImageIcon("resources/img/background.gif");
 
             easyButtonImage = new ImageIcon("resources/img/easyButton.png");
             mediumButtonImage = new ImageIcon("resources/img/mediumButton.png");
@@ -47,6 +53,18 @@ public class Assets{
             System.out.println("Failed to load graphics");
         }
 
+    }
+
+    public static ImageIcon getEasyGooseImage() {
+        return easyGooseImage;
+    }
+
+    public static ImageIcon getMediumGooseImage() {
+        return mediumGooseImage;
+    }
+
+    public static ImageIcon getHardGooseImage() {
+        return hardGooseImage;
     }
 
     public static ImageIcon getGooseGifImage2() {

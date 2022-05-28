@@ -104,7 +104,7 @@ public class GamePane extends JPanel {
             System.out.println("MainMenu/ModeMenu/easyButton");
             Main.getGameFrame().getCardLayout().show(Main.getGameFrame().getMainPane(),"GAMEPLAY");
             setModeSelected(0);
-            getModeSelected(0);
+
 
 
         });
@@ -112,14 +112,14 @@ public class GamePane extends JPanel {
             System.out.println("MainMenu/ModeMenu/mediumButton");
             Main.getGameFrame().getCardLayout().show(Main.getGameFrame().getMainPane(),"GAMEPLAY");
             setModeSelected(1);
-            getModeSelected(1);
+
 
         });
         hardDiffButton.addActionListener(e ->{
             System.out.println("MainMenu/ModeMenu/hardButton");
             Main.getGameFrame().getCardLayout().show(Main.getGameFrame().getMainPane(),"GAMEPLAY");
             setModeSelected(2);
-            getModeSelected(2);
+
         });
         returnButton.addActionListener(e ->{
             System.out.println("MainMenu/returnButton");
