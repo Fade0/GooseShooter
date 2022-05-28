@@ -34,13 +34,12 @@ public class MovingObject extends JButton {
                     didHitBounds();
                     sleep(1000/60);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
-                    System.out.println("kaczka ded");
+                    //e.printStackTrace();
+                    System.out.println("kaczka = ded");
                     break;
                 }
             }
 
-            System.out.println("Bbye D:");
             Main.getGameFrame().getGameplayPane().getShootingPane().remove(this);
         });
 

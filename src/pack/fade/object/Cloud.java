@@ -13,7 +13,7 @@ public class Cloud extends MovingObject{
         super(lives, direction, imageIcon, speed);
 
 
-    }
+    }/*
     public static Cloud spawnCloud(){
         Random random = new Random();
         ImageIcon imageIcon = Assets.getCloudImage();
@@ -30,10 +30,10 @@ public class Cloud extends MovingObject{
                     Main.getGameFrame().getGameplayPane().getShootingPane().getWidth() - diff);
         }
 
-        int speed = random.nextInt(10);
+        int speed = random.nextInt(2);
 
         return new Cloud(999,direction,imageIcon,speed);
     }
-
+*/
 
 }

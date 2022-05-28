@@ -1,6 +1,7 @@
 package pack.fade;
 
 import pack.fade.game.GamePane;
+import pack.fade.game.GameTime;
 import pack.fade.game.GameplayPane;
 import pack.fade.game.Settings;
 import pack.fade.leaderboard.LeaderboardPane;
@@ -13,6 +14,7 @@ public class Main {
 
     private static GameFrame gameFrame;
     private static Settings settings;
+    private static GameTime gameTime;
 
     public static void main(String[] args) {
         settings = new Settings();
@@ -22,6 +24,10 @@ public class Main {
         SwingUtilities.invokeLater(() ->{
             gameFrame = new GameFrame();
         });
+    }
+
+    public static GameTime getGameTime() {
+        return gameTime;
     }
 
     public static GameFrame getGameFrame() {

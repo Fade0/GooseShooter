@@ -40,10 +40,8 @@ public class Assets{
             mediumGooseImage = new ImageIcon("resources/img/mediumGoose.png");
             hardGooseImage = new ImageIcon("resources/img/hardGoose.png");
             backgroundImage = new ImageIcon("resources/img/bg2.png");
-            //change cloud image
-            cloudImage = new ImageIcon("hardGooseImage.png");
-            //change tree image
-            treeImage = new ImageIcon("treeImage.png");
+            cloudImage = new ImageIcon("resources/img/cloudImage.png");
+            treeImage = new ImageIcon("resources/img/treeImage.png");
 
             //https://giventofly.github.io/pixelit/#examples
             //backgroundImage = new ImageIcon("resources/img/background.png");

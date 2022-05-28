@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
+
 public class GameplayPane extends JPanel {
     private CardLayout cardLayout;
     private JPanel leaderboardPane;
@@ -176,6 +177,14 @@ public class GameplayPane extends JPanel {
         gridBagConstraints.gridx = 3;
         //CreditsButton
         add(testbutton2, gridBagConstraints);
+        upgradeButton.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                Cloud cloud = new Cloud(9999,false,Assets.getCloudImage(),1);
+                shootingPane.add(cloud);
+            }
+        });
 
         ammoButton.addActionListener(new AbstractAction() {
             @Override
@@ -183,14 +192,15 @@ public class GameplayPane extends JPanel {
                 Random random = new Random();
                 Tree tree = new Tree();
                 System.out.println(tree.getHeight());
-                tree.moveObject(400,400);
-                add(tree);
+                shootingPane.add(tree);
+
             }
         });
 
         reloadButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //System.out.println(Main.getGameTime().getCounter());
                 spawnRate = Main.getSettings().getModeSelected();
                 System.out.println(spawnRate);
                 Random random = new Random();
