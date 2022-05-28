@@ -1,4 +1,12 @@
 package pack.fade.object;
 
-public class Tree {
+import pack.fade.Assets;
+
+public class Tree extends MovingObject{
+
+    public Tree(){
+        super(999,true, Assets.getTreeImage(),0);
+    }
+
+
 }

@@ -1,4 +1,14 @@
 package pack.fade.leaderboard;
 
-public class Player {
+import java.io.Serializable;
+
+public record Player(String nickName, int score, int time) implements Serializable {
+    @Override
+    public String toString() {
+        return "Player{" +
+                "nickName='" + nickName + '\'' +
+                ", score=" + score +
+                ", time=" + time +
+                '}';
+    }
 }

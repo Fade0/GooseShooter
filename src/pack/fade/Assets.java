@@ -18,6 +18,8 @@ public class Assets{
     private static ImageIcon easyGooseImage;
     private static ImageIcon mediumGooseImage;
     private static ImageIcon hardGooseImage;
+    private static ImageIcon cloudImage;
+    private static ImageIcon treeImage;
     private static ImageIcon backgroundImage;
     private static ImageIcon creditsButtonImage;
 
@@ -38,6 +40,11 @@ public class Assets{
             mediumGooseImage = new ImageIcon("resources/img/mediumGoose.png");
             hardGooseImage = new ImageIcon("resources/img/hardGoose.png");
             backgroundImage = new ImageIcon("resources/img/bg2.png");
+            //change cloud image
+            cloudImage = new ImageIcon("hardGooseImage.png");
+            //change tree image
+            treeImage = new ImageIcon("treeImage.png");
+
             //https://giventofly.github.io/pixelit/#examples
             //backgroundImage = new ImageIcon("resources/img/background.png");
             //backgroundImage = new ImageIcon("resources/img/background.gif");
@@ -53,6 +60,14 @@ public class Assets{
             System.out.println("Failed to load graphics");
         }
 
+    }
+
+    public static ImageIcon getTreeImage() {
+        return treeImage;
+    }
+
+    public static ImageIcon getCloudImage() {
+        return cloudImage;
     }
 
     public static ImageIcon getEasyGooseImage() {

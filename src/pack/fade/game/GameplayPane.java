@@ -1,11 +1,9 @@
 package pack.fade.game;
 
+import pack.fade.Assets;
 import pack.fade.Main;
 import pack.fade.MainMenuPane;
-import pack.fade.object.Duck;
-import pack.fade.object.EasyDuck;
-import pack.fade.object.HardDuck;
-import pack.fade.object.MediumDuck;
+import pack.fade.object.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,9 +34,14 @@ public class GameplayPane extends JPanel {
     private ImageIcon backgroundImage;
     private ImageIcon bg3;
 
+    private GameTime gameTime;
     private JPanel shootingPane;
+
+    private JLabel timeLabel;
+    private JLabel lviesLabel;
+    private JLabel scoreLabel;
     /*
-    WYjebac wszystkie zmienne typu button przed konstruktor
+    wywalic wszystkie zmienne typu button przed konstruktor
     np
     Jbutton reloadBUtton;
      */
@@ -55,6 +58,9 @@ public class GameplayPane extends JPanel {
         backgroundImage = new ImageIcon("resources/img/background.gif");
         bg3 = new ImageIcon("resources/img/bg3.png");
 
+        gameTime = new GameTime();
+
+        timeLabel = new JLabel("time");
         //Button - Title
         JButton titleButton = new JButton(titleImage);
         titleButton.setBorder(BorderFactory.createEmptyBorder());
@@ -64,9 +70,9 @@ public class GameplayPane extends JPanel {
         JButton timeButton = new JButton(timeButtonImage);
         timeButton.setBorder(BorderFactory.createEmptyBorder());
         timeButton.setContentAreaFilled(false);
-        timeButton.setText("time!");
-        timeButton.setHorizontalTextPosition(JButton.CENTER);
+        timeButton.setHorizontalTextPosition(JButton.HORIZONTAL);
         timeButton.setVerticalTextPosition(JButton.CENTER);
+        //timeButton.setText();
 
         //liveButton
         JButton liveButton = new JButton(livesButtonImage);
@@ -171,7 +177,16 @@ public class GameplayPane extends JPanel {
         //CreditsButton
         add(testbutton2, gridBagConstraints);
 
-
+        ammoButton.addActionListener(new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Random random = new Random();
+                Tree tree = new Tree();
+                System.out.println(tree.getHeight());
+                tree.moveObject(400,400);
+                add(tree);
+            }
+        });
 
         reloadButton.addActionListener(new ActionListener() {
             @Override
